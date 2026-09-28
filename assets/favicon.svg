@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Sudip Kurundwade favicon">
+  <rect width="64" height="64" rx="18" fill="#FFFDF5"/>
+  <circle cx="30" cy="30" r="23" fill="#FBBF24" stroke="#1E293B" stroke-width="4"/>
+  <path d="M19 25c0-6 5-10 13-10 6 0 10 2 13 6l-7 6c-2-2-4-3-7-3-3 0-5 1-5 3 0 6 21 2 21 17 0 6-5 10-14 10-8 0-14-3-17-8l8-5c2 3 5 5 9 5 4 0 6-1 6-3 0-6-20-2-20-18Z" fill="#8B5CF6"/>
+  <path d="M14 47h36" stroke="#1E293B" stroke-width="4" stroke-linecap="round"/>
+</svg>

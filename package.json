@@ -1,0 +1,10 @@
+{
+  "name": "playful-geometric-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A dependency-free playful geometric developer portfolio.",
+  "scripts": {
+    "check": "node scripts/validate-site.mjs",
+    "browser:check": "node scripts/browser-smoke.mjs"
+  }
+}

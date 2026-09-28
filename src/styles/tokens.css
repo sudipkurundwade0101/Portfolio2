@@ -1,0 +1,92 @@
+:root {
+  color-scheme: light;
+
+  --color-background: #fffdf5;
+  --color-foreground: #1e293b;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  --color-accent: #8b5cf6;
+  --color-accent-foreground: #ffffff;
+  --color-secondary: #f472b6;
+  --color-tertiary: #fbbf24;
+  --color-quaternary: #34d399;
+  --color-border: #e2e8f0;
+  --color-input: #ffffff;
+  --color-card: #ffffff;
+  --color-ring: #8b5cf6;
+  --color-danger: #e11d48;
+  --color-success: #059669;
+  --color-focus-soft: rgba(139, 92, 246, 0.18);
+  --color-shadow-soft: #e2e8f0;
+
+  --font-heading: "Outfit", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.563rem;
+  --text-2xl: 1.953rem;
+  --text-3xl: 2.441rem;
+  --text-4xl: 3.052rem;
+  --text-5xl: clamp(3rem, 5.6vw, 4.85rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  --radius-blob: 24px 24px 24px 0;
+  --radius-arch: 9999px 9999px 24px 24px;
+
+  --border-width: 2px;
+  --border-strong: var(--border-width) solid var(--color-foreground);
+  --border-subtle: var(--border-width) solid var(--color-border);
+
+  --shadow-pop: 4px 4px 0 0 var(--color-foreground);
+  --shadow-pop-hover: 6px 6px 0 0 var(--color-foreground);
+  --shadow-pop-active: 2px 2px 0 0 var(--color-foreground);
+  --shadow-card: 8px 8px 0 0 var(--color-shadow-soft);
+  --shadow-card-pink: 8px 8px 0 0 var(--color-secondary);
+  --shadow-card-yellow: 8px 8px 0 0 var(--color-tertiary);
+  --shadow-card-green: 8px 8px 0 0 var(--color-quaternary);
+  --shadow-focus: 4px 4px 0 0 var(--color-ring);
+
+  --container: 72rem;
+  --container-wide: 82rem;
+  --section-block: clamp(4rem, 8vw, 6rem);
+
+  --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-fast: 160ms;
+  --duration-medium: 260ms;
+  --duration-slow: 520ms;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --text-3xl: 2rem;
+    --text-4xl: 2.55rem;
+    --text-5xl: 3rem;
+    --shadow-pop: 3px 3px 0 0 var(--color-foreground);
+    --shadow-pop-hover: 4px 4px 0 0 var(--color-foreground);
+    --shadow-card: 5px 5px 0 0 var(--color-shadow-soft);
+    --shadow-card-pink: 5px 5px 0 0 var(--color-secondary);
+    --shadow-card-yellow: 5px 5px 0 0 var(--color-tertiary);
+    --shadow-card-green: 5px 5px 0 0 var(--color-quaternary);
+  }
+}
