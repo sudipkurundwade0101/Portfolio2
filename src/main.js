@@ -76,8 +76,8 @@
               ${escapeHTML(data.personal.label)}
             </p>
             <h1 id="hero-title">
-              Hi, I am <span>${escapeHTML(data.personal.name)}</span>
-              <strong>Software developer focused on <em>full-stack</em> work.</strong>
+              <span>${escapeHTML(data.personal.shortName)}</span>
+              builds useful <strong>software that <em>works.</em></strong>
             </h1>
             <p class="hero__copy">${escapeHTML(data.personal.intro)}</p>
             <div class="hero__actions">
@@ -88,18 +88,29 @@
               ${data.focusAreas.map((item, index) => tag(item, ["violet", "pink", "green", "yellow"][index % 4])).join("")}
             </div>
           </div>
-          <div class="hero__visual reveal" aria-label="Playful geometric developer illustration">
-            <div class="portrait-card sticker-card">
-              <div class="portrait-card__grid" aria-hidden="true"></div>
-              <div class="portrait-card__avatar" role="img" aria-label="Abstract geometric developer portrait">
-                <span class="avatar-shape avatar-shape--head"></span>
-                <span class="avatar-shape avatar-shape--body"></span>
-                <span class="avatar-shape avatar-shape--spark"></span>
-                <span class="avatar-shape avatar-shape--code">&lt;/&gt;</span>
+          <div class="hero__visual reveal">
+            <article class="hero-workbench sticker-card" aria-label="Developer workbench">
+              <div class="workbench__bar" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <p>build / learn / ship</p>
               </div>
-              <div class="portrait-card__badge portrait-card__badge--top">${icon("sparkles")} Clean UI</div>
-              <div class="portrait-card__badge portrait-card__badge--bottom">${icon("code")} Java + APIs</div>
+              <div class="workbench__stage">
+                <div class="workbench__monogram" aria-hidden="true">SK</div>
+                <div class="workbench__copy">
+                  <p class="card-kicker">${escapeHTML(data.personal.role)}</p>
+                  <h2>Systems first.<br /><em>Details matter.</em></h2>
+                </div>
+                <div class="workbench__stack" aria-label="Current technology focus">
+                  <span>Java</span><span>Spring Boot</span><span>React</span>
+                </div>
+                <p class="workbench__note">From a rough idea to a clear, working flow.</p>
+              </div>
+            </article>
+            <div class="hero-proof" aria-label="Portfolio highlights">
+              <article><strong>250+</strong><span>LeetCode problems</span></article>
+              <article><strong>8.45</strong><span>Current CGPA</span></article>
             </div>
+            <div class="hero-flag">${icon("code")} Full-stack learner</div>
             ${decoration("triangle", "visual-triangle")}
             ${decoration("pill", "visual-pill")}
             ${decoration("star", "visual-star")}
@@ -362,6 +373,11 @@
         ${renderContact()}
       </main>
       ${renderFooter()}
+      <dialog class="photo-dialog" aria-labelledby="photo-dialog-caption" data-photo-dialog>
+        <button class="photo-dialog__close" type="button" aria-label="Close photo viewer" data-photo-dialog-close>${icon("x")}</button>
+        <img src="" alt="" data-photo-dialog-image />
+        <p id="photo-dialog-caption" data-photo-dialog-caption></p>
+      </dialog>
     `;
   }
 
@@ -524,8 +540,49 @@
     });
   }
 
+  function setupPhotoViewer() {
+    const dialog = document.querySelector("[data-photo-dialog]");
+    const image = document.querySelector("[data-photo-dialog-image]");
+    const caption = document.querySelector("[data-photo-dialog-caption]");
+    const closeButton = document.querySelector("[data-photo-dialog-close]");
+    const triggers = Array.from(document.querySelectorAll("[data-achievement-photo]"));
+    let lastTrigger = null;
+
+    if (!dialog || !image || !caption || !closeButton || !triggers.length) {
+      return;
+    }
+
+    function closeDialog() {
+      dialog.close();
+      lastTrigger?.focus();
+    }
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        lastTrigger = trigger;
+        image.src = trigger.dataset.photoSrc;
+        image.alt = trigger.dataset.photoAlt;
+        caption.textContent = trigger.dataset.photoAlt;
+        dialog.showModal();
+        closeButton.focus();
+      });
+    });
+
+    closeButton.addEventListener("click", closeDialog);
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) {
+        closeDialog();
+      }
+    });
+    dialog.addEventListener("close", () => {
+      image.removeAttribute("src");
+      image.alt = "";
+    });
+  }
+
   renderApp();
   setupNavigation();
   setupReveal();
   setupContactForm();
+  setupPhotoViewer();
 })();

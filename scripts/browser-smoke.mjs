@@ -180,8 +180,8 @@ let browser;
 let staticServer;
 
 try {
-  await rm(profileDir, { recursive: true, force: true });
-  await rm(outputDir, { recursive: true, force: true });
+  await removeDirectoryWhenAvailable(profileDir);
+  await removeDirectoryWhenAvailable(outputDir);
   await mkdir(profileDir, { recursive: true });
   await mkdir(outputDir, { recursive: true });
 
@@ -315,7 +315,7 @@ try {
       fail(`${viewport.name}: contact form was not rendered.`);
     }
 
-    if (!metrics.heroTitle.includes("Software developer")) {
+    if (!metrics.heroTitle.includes("software that works")) {
       fail(`${viewport.name}: hero content did not render.`);
     }
 

@@ -190,11 +190,37 @@
   }
 
   function achievementCard(item) {
+    const photos = item.photos || [];
+
     return `
       <article class="achievement-card sticker-card reveal" data-tone="${escapeHTML(item.tone)}">
-        ${iconCircle(item.icon || toneIcon[item.tone], item.tone, item.title)}
-        <h3>${escapeHTML(item.title)}</h3>
-        <p>${escapeHTML(item.description)}</p>
+        ${
+          photos.length
+            ? `<div class="achievement-gallery achievement-gallery--${photos.length}" aria-label="${escapeHTML(item.title)} photo gallery">
+                ${photos
+                  .map(
+                    (photo) => `
+                      <button class="achievement-photo" type="button" data-achievement-photo data-photo-src="${escapeHTML(photo.src)}" data-photo-alt="${escapeHTML(photo.alt)}" aria-label="View ${escapeHTML(photo.alt)} larger">
+                        <img src="${escapeHTML(photo.src)}" alt="${escapeHTML(photo.alt)}" loading="lazy" />
+                      </button>
+                    `
+                  )
+                  .join("")}
+              </div>`
+            : ""
+        }
+        <div class="achievement-card__body">
+          ${iconCircle(item.icon || toneIcon[item.tone], item.tone, item.title)}
+          <p class="card-kicker">${escapeHTML(item.date || "Achievement")}</p>
+          <h3>${escapeHTML(item.title)}</h3>
+          <p>${escapeHTML(item.description)}</p>
+          ${
+            item.details?.length
+              ? `<ul class="check-list">${item.details.map((detail) => `<li>${icon("check")}<span>${escapeHTML(detail)}</span></li>`).join("")}</ul>`
+              : ""
+          }
+          ${item.team ? `<p class="achievement-card__team"><strong>Team:</strong> ${escapeHTML(item.team)}</p>` : ""}
+        </div>
       </article>
     `;
   }

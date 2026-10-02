@@ -102,7 +102,7 @@ window.portfolioData = {
         "Integrated RESTful APIs with MongoDB and Mongoose for efficient management of academic records"
       ],
       stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "Socket.IO", "LiveKit", "Cloudinary"],
-      githubUrl: "",
+      githubUrl: "https://github.com/sudipkurundwade0101/ERP",
       liveUrl: "",
       accent: "pink",
       featured: true,
@@ -130,6 +130,160 @@ window.portfolioData = {
       preview: {
         label: "Civic",
         metric: "02",
+      },
+    },
+    {
+      title: "iCAM Product Identifier",
+      eyebrow: "Android Machine Learning Mini Project",
+      description:
+        "An Android mobile application that uses two machine learning models to identify FMCG products and fruits or vegetables through a camera-led workflow.",
+      problem:
+        "The project explores a simple, accessible way to identify everyday items by pairing category-specific recognition with spoken interaction.",
+      features: [
+        "Two machine learning models for FMCG and fruit or vegetable identification",
+        "Camera capture flow with flash and portrait controls",
+        "Text-to-speech prompts with double-tap category selection",
+        "Built in Java for Android as a second mini project",
+      ],
+      stack: ["Java", "Android", "Machine Learning", "Camera API", "Text-to-Speech"],
+      githubUrl: "https://github.com/sudipkurundwade0101/iCAM",
+      liveUrl: "",
+      accent: "yellow",
+      preview: {
+        label: "iCAM",
+        metric: "03",
+      },
+    },
+    {
+      title: "ByteArq",
+      eyebrow: "Serverless Events Platform",
+      description:
+        "A Vite and React application backed by a MongoDB API, structured for deployment as a single Vercel Serverless Function.",
+      problem:
+        "It keeps frontend delivery and API routing together in a Vercel-friendly architecture while supporting event, workshop, application, and management workflows.",
+      features: [
+        "React and Vite frontend with environment-aware API configuration",
+        "One Vercel Serverless Function routes all API requests",
+        "Reusable Mongoose connection handling for serverless MongoDB access",
+        "JWT authentication, flexible CORS, and event or workshop models",
+      ],
+      stack: ["React.js", "Vite", "Node.js", "Vercel", "MongoDB", "Mongoose", "JWT"],
+      githubUrl: "https://github.com/sudipkurundwade0101/bytearq_",
+      liveUrl: "",
+      accent: "green",
+      preview: {
+        label: "Byte",
+        metric: "04",
+      },
+    },
+    {
+      title: "Food Zone",
+      eyebrow: "Food Ordering Interface",
+      description:
+        "A responsive food application interface designed for browsing menus, managing a cart, and creating a smooth ordering experience.",
+      problem:
+        "It brings food discovery, category filtering, and cart state into one clear customer-facing workflow.",
+      features: [
+        "Responsive React interface for menu browsing and cart interactions",
+        "Category filtering for faster food discovery",
+        "Redux Toolkit state management for predictable data flow",
+        "Tailwind CSS styling for a modern, adaptable interface",
+      ],
+      stack: ["React.js", "Tailwind CSS", "Redux Toolkit", "JavaScript"],
+      githubUrl: "https://github.com/naeemnaikwadi/food-zone",
+      liveUrl: "",
+      accent: "violet",
+      preview: {
+        label: "Food",
+        metric: "05",
+      },
+    },
+    {
+      title: "Web Builder",
+      eyebrow: "AI-Assisted Creation Platform",
+      description:
+        "A full-stack platform for creating and organizing web projects through reusable blocks, starter templates, media uploads, and AI-assisted workflows.",
+      problem:
+        "It brings the building blocks of a website project into one workspace, from project setup and templates to content assets and assisted creation.",
+      features: [
+        "Project, collection, template, and reusable block management",
+        "Google Generative AI-assisted creation features",
+        "Authentication, user profiles, and protected project workflows",
+        "Cloudinary-backed uploads for project media",
+      ],
+      stack: ["Node.js", "Express.js", "MongoDB", "Mongoose", "Gemini AI", "Cloudinary", "JWT"],
+      githubUrl: "https://github.com/sudipkurundwade/web_builder",
+      liveUrl: "",
+      accent: "yellow",
+      preview: {
+        label: "Build",
+        metric: "06",
+      },
+    },
+    {
+      title: "Slynk",
+      eyebrow: "Professional Connection Platform",
+      description:
+        "A comprehensive platform designed to connect investors, entrepreneurs, and freelancers through profiles, posts, real-time conversations, and collaboration tools.",
+      problem:
+        "It gives different kinds of builders a shared space to discover opportunities, communicate, and form working connections.",
+      features: [
+        "Separate flows for entrepreneurs, investors, and freelancers",
+        "Posts, feeds, profiles, and real-time chat interfaces",
+        "Firebase authentication with Express and Socket.IO services",
+        "LiveKit integration for live communication features",
+      ],
+      stack: ["React.js", "Vite", "Firebase", "Node.js", "Express.js", "Socket.IO", "LiveKit"],
+      githubUrl: "https://github.com/siddhumore18/Slynk",
+      liveUrl: "",
+      accent: "pink",
+      preview: {
+        label: "Slynk",
+        metric: "07",
+      },
+    },
+    {
+      title: "Clinic Management Software",
+      eyebrow: "Healthcare Operations Interface",
+      description:
+        "A React and TypeScript clinic-management interface structured around protected routes, calendar-based views, dashboards, and responsive administrative tools.",
+      problem:
+        "It organizes key clinic workflows into clear, accessible screens so staff can move between operational views without friction.",
+      features: [
+        "Protected routes for controlled access to application views",
+        "Calendar and date-driven scheduling components",
+        "Dashboard visualizations and reusable interface primitives",
+        "Responsive React, TypeScript, and Tailwind CSS implementation",
+      ],
+      stack: ["React.js", "Vite", "TypeScript", "Tailwind CSS", "shadcn/ui", "Recharts"],
+      githubUrl: "https://github.com/sudipkurundwade0101/Clinic-Management-Software",
+      liveUrl: "",
+      accent: "green",
+      preview: {
+        label: "Clinic",
+        metric: "08",
+      },
+    },
+    {
+      title: "MindBridge",
+      eyebrow: "Wellbeing Activity Platform",
+      description:
+        "A React application that brings wellbeing activities, progress tracking, chat, and interactive games into a single supportive experience.",
+      problem:
+        "It creates an approachable place for users to engage with everyday wellbeing activities while keeping their progress visible.",
+      features: [
+        "Interactive activities including memory match, 2048, coloring, and tile slider",
+        "Progress statistics and daily activity views",
+        "Chat interface with live conversation components",
+        "Responsive React and Tailwind CSS interface",
+      ],
+      stack: ["React.js", "Vite", "Tailwind CSS", "Socket.IO", "JavaScript"],
+      githubUrl: "https://github.com/naeemnaikwadi/mindbridge2",
+      liveUrl: "",
+      accent: "violet",
+      preview: {
+        label: "Mind",
+        metric: "09",
       },
     }
   ],
@@ -159,16 +313,53 @@ window.portfolioData = {
   ],
   achievements: [
     {
-      title: "1st Prize",
-      description: "Secured 1st Prize at Nirmitih Hackathon – Spectra 2.0 (2026) for developing an AI-powered Civic Issue Reporting & Governance Platform using the MERN Stack.",
+      title: "1st Prize · Nirmitih Hackathon",
+      date: "Spectra 2.0 (2K26) · DKTE",
+      description: "Won 1st Prize for an AI-powered Civic Issue Reporting & Governance Platform built with the MERN stack.",
+      details: [
+        "Auto-GPS routing to the appropriate Panchayat or Nagar Panchayat",
+        "Mandatory photo evidence to support transparent issue resolution",
+        "Hierarchical access for super admins, regional admins, and department staff",
+      ],
+      team: "Mohini Mukesh Deshmukh, Aditi Rewadkar, and Sudip Kurundwade",
+      photos: [
+        {
+          src: "assets/achievements/nirmitih-team.jpg",
+          alt: "Nirmitih Hackathon winning team with the trophy at DKTE",
+        },
+        {
+          src: "assets/achievements/nirmitih-ceremony.jpg",
+          alt: "Nirmitih Hackathon award ceremony at Spectra 2.0",
+        },
+        {
+          src: "assets/achievements/nirmitih-trophy.jpg",
+          alt: "Nirmitih Hackathon Spectra 2.0 winner trophy",
+        },
+      ],
       tone: "pink",
-      icon: "award"
+      icon: "award",
     },
     {
-      title: "1st Runner-Up",
-      description: "Achieved 1st Runner-Up in the Project Based Learning (PBL) Competition at Kolhapur Institute of Technology's College of Engineering for innovative project development and teamwork",
+      title: "1st Runner-Up · KIT PBL Day",
+      date: "31 October 2025 · KIT, Gokul-Shirgaon",
+      description: "Achieved 1st Runner-Up in the Project Based Learning Competition through collaborative project development as a CSBS engineering team.",
+      details: [
+        "Recognized for project-based learning, innovation, and team collaboration",
+        "Presented the work during KIT PBL Day",
+      ],
+      team: "Sahil Gavankar, Naeem Naikwadi, Vaibhav Suryavanshi, and Sudip Kurundwade",
+      photos: [
+        {
+          src: "assets/achievements/pbl-award-one.jpg",
+          alt: "KIT PBL Day award presentation on 31 October 2025",
+        },
+        {
+          src: "assets/achievements/pbl-award-two.jpg",
+          alt: "KIT PBL Day team receiving the 1st Runner-Up certificate",
+        },
+      ],
       tone: "yellow",
-      icon: "trophy"
+      icon: "trophy",
     }
   ],
 };
