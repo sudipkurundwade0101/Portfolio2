@@ -192,6 +192,16 @@ window.portfolioData = {
       stack: ["React.js", "Tailwind CSS", "Redux Toolkit", "JavaScript"],
       githubUrl: "https://github.com/naeemnaikwadi/food-zone",
       liveUrl: "",
+      screenshots: [
+        {
+          src: "assets/projects/food-zone-home.jpg",
+          alt: "Food Zone home page with menu browsing and food cards",
+        },
+        {
+          src: "assets/projects/food-zone-cart.png",
+          alt: "Food Zone shopping cart interface",
+        },
+      ],
       accent: "violet",
       preview: {
         label: "Food",
@@ -236,6 +246,16 @@ window.portfolioData = {
       stack: ["React.js", "Vite", "Firebase", "Node.js", "Express.js", "Socket.IO", "LiveKit"],
       githubUrl: "https://github.com/siddhumore18/Slynk",
       liveUrl: "",
+      screenshots: [
+        {
+          src: "assets/projects/slynk-freelancer-dashboard.jpeg",
+          alt: "Slynk freelancer dashboard with posts and project activity",
+        },
+        {
+          src: "assets/projects/slynk-analytics.jpeg",
+          alt: "Slynk entrepreneur analytics dashboard",
+        },
+      ],
       accent: "pink",
       preview: {
         label: "Slynk",
@@ -284,6 +304,33 @@ window.portfolioData = {
       preview: {
         label: "Mind",
         metric: "09",
+      },
+    },
+    {
+      title: "GrowSkill",
+      eyebrow: "Rural Digital Literacy Platform",
+      description:
+        "A React learning platform focused on offline-first digital literacy education for rural students and teachers.",
+      problem:
+        "It makes essential computer skills, internet safety, and digital communication learning more accessible in local-language contexts.",
+      features: [
+        "Offline-first digital learning experience",
+        "Digital literacy modules for students and teachers",
+        "Local-language learning support",
+      ],
+      stack: ["React.js", "Offline-first Learning", "Digital Literacy"],
+      githubUrl: "",
+      liveUrl: "",
+      screenshots: [
+        {
+          src: "assets/projects/growskill-home.jpeg",
+          alt: "GrowSkill rural digital literacy platform home page",
+        },
+      ],
+      accent: "green",
+      preview: {
+        label: "Grow",
+        metric: "10",
       },
     }
   ],

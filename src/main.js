@@ -66,54 +66,37 @@
 
     return `
       <section class="hero section" id="home" aria-labelledby="hero-title">
-        ${decoration("circle", "hero__sun")}
         ${decoration("dots", "hero__dots")}
-        ${decoration("squiggle", "hero__squiggle")}
         <div class="section__inner hero__grid">
           <div class="hero__content reveal">
             <p class="hero__label">
               <span aria-hidden="true"></span>
-              ${escapeHTML(data.personal.label)}
+              ${escapeHTML(data.personal.role)}
             </p>
             <h1 id="hero-title">
-              <span>${escapeHTML(data.personal.shortName)}</span>
-              builds useful <strong>software that <em>works.</em></strong>
+              I build <span>useful software</span> for real people.
             </h1>
             <p class="hero__copy">${escapeHTML(data.personal.intro)}</p>
             <div class="hero__actions">
               ${buttonLink({ href: "#projects", label: "View My Work", variant: "primary", iconName: "arrowRight" })}
               ${resumeButton}
             </div>
-            <div class="hero__chips" aria-label="Portfolio focus areas">
-              ${data.focusAreas.map((item, index) => tag(item, ["violet", "pink", "green", "yellow"][index % 4])).join("")}
+            <div class="hero__focus" aria-label="Portfolio focus areas">
+              <p>Currently growing in</p>
+              <div>${data.focusAreas.map((item, index) => tag(item, ["violet", "pink", "green", "yellow"][index % 4])).join("")}</div>
             </div>
           </div>
           <div class="hero__visual reveal">
-            <article class="hero-workbench sticker-card" aria-label="Developer workbench">
-              <div class="workbench__bar" aria-hidden="true">
-                <span></span><span></span><span></span>
-                <p>build / learn / ship</p>
-              </div>
-              <div class="workbench__stage">
-                <div class="workbench__monogram" aria-hidden="true">SK</div>
-                <div class="workbench__copy">
-                  <p class="card-kicker">${escapeHTML(data.personal.role)}</p>
-                  <h2>Systems first.<br /><em>Details matter.</em></h2>
-                </div>
-                <div class="workbench__stack" aria-label="Current technology focus">
-                  <span>Java</span><span>Spring Boot</span><span>React</span>
-                </div>
-                <p class="workbench__note">From a rough idea to a clear, working flow.</p>
-              </div>
-            </article>
-            <div class="hero-proof" aria-label="Portfolio highlights">
+            <figure class="hero-art">
+              <div class="hero-art__backdrop" aria-hidden="true"></div>
+              <img src="assets/hero-geometric-portrait.jpeg" alt="Geometric illustration of Sudip Kurundwade in a suit" />
+            </figure>
+            <div class="hero-metrics" aria-label="Portfolio highlights">
               <article><strong>250+</strong><span>LeetCode problems</span></article>
               <article><strong>8.45</strong><span>Current CGPA</span></article>
+              <article><strong>10</strong><span>Projects featured</span></article>
             </div>
-            <div class="hero-flag">${icon("code")} Full-stack learner</div>
-            ${decoration("triangle", "visual-triangle")}
-            ${decoration("pill", "visual-pill")}
-            ${decoration("star", "visual-star")}
+            <p class="hero-visual__note">Java · Spring Boot · React</p>
           </div>
         </div>
       </section>
@@ -545,7 +528,7 @@
     const image = document.querySelector("[data-photo-dialog-image]");
     const caption = document.querySelector("[data-photo-dialog-caption]");
     const closeButton = document.querySelector("[data-photo-dialog-close]");
-    const triggers = Array.from(document.querySelectorAll("[data-achievement-photo]"));
+    const triggers = Array.from(document.querySelectorAll("[data-photo-viewer]"));
     let lastTrigger = null;
 
     if (!dialog || !image || !caption || !closeButton || !triggers.length) {

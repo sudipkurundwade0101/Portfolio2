@@ -133,18 +133,33 @@
       { label: "GitHub", href: project.githubUrl, iconName: "github" },
       { label: "Live demo", href: project.liveUrl, iconName: "external" },
     ].filter((link) => Boolean(link.href));
+    const screenshots = project.screenshots || [];
+
+    const previewContent = screenshots.length
+      ? `<div class="project-screenshot-grid project-screenshot-grid--${screenshots.length}">
+          ${screenshots
+            .map(
+              (screenshot, index) => `
+                <button class="project-screenshot project-screenshot--${index + 1}" type="button" data-photo-viewer data-photo-src="${escapeHTML(screenshot.src)}" data-photo-alt="${escapeHTML(screenshot.alt)}" aria-label="View ${escapeHTML(screenshot.alt)} larger">
+                  <img src="${escapeHTML(screenshot.src)}" alt="${escapeHTML(screenshot.alt)}" loading="lazy" />
+                </button>
+              `
+            )
+            .join("")}
+        </div>`
+      : `<div class="preview-grid">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="preview-orbit">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>`;
 
     return `
       <article class="project-card sticker-card ${project.featured ? "project-card--featured" : ""} reveal" data-tone="${escapeHTML(project.accent)}">
-        <div class="project-card__preview" aria-label="${escapeHTML(project.title)} preview">
-          <div class="preview-grid">
-            <span></span><span></span><span></span><span></span>
-          </div>
-          <div class="preview-orbit">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+        <div class="project-card__preview ${screenshots.length ? "project-card__preview--screenshots" : ""}" aria-label="${escapeHTML(project.title)} preview">
+          ${previewContent}
           <div class="preview-badge">${escapeHTML(project.preview.label)}</div>
           <strong>${escapeHTML(project.preview.metric)}</strong>
         </div>
@@ -207,7 +222,7 @@
                 ${photos
                   .map(
                     (photo) => `
-                      <button class="achievement-photo" type="button" data-achievement-photo data-photo-src="${escapeHTML(photo.src)}" data-photo-alt="${escapeHTML(photo.alt)}" aria-label="View ${escapeHTML(photo.alt)} larger">
+                      <button class="achievement-photo" type="button" data-photo-viewer data-photo-src="${escapeHTML(photo.src)}" data-photo-alt="${escapeHTML(photo.alt)}" aria-label="View ${escapeHTML(photo.alt)} larger">
                         <img src="${escapeHTML(photo.src)}" alt="${escapeHTML(photo.alt)}" loading="lazy" />
                       </button>
                     `

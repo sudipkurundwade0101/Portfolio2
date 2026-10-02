@@ -315,14 +315,14 @@ try {
       fail(`${viewport.name}: contact form was not rendered.`);
     }
 
-    if (!metrics.heroTitle.includes("software that works")) {
+    if (!metrics.heroTitle.includes("useful software")) {
       fail(`${viewport.name}: hero content did not render.`);
     }
 
     const photoViewerResult = await client.command("Runtime.evaluate", {
       returnByValue: true,
       expression: `(() => {
-        const trigger = document.querySelector("[data-achievement-photo]");
+        const trigger = document.querySelector("[data-photo-viewer]");
         const dialog = document.querySelector("[data-photo-dialog]");
         const image = document.querySelector("[data-photo-dialog-image]");
         if (!trigger || !dialog || !image) {
