@@ -287,7 +287,24 @@ window.portfolioData = {
       },
     }
   ],
-  experience: [],
+  experience: [
+    {
+      date: "Volunteer Experience",
+      role: "Technical Head",
+      company: "byteARQ Technical Club",
+      description:
+        "Volunteer Technical Head for byteARQ Technical Club, contributing to the club's technical team and its student-led technology activities.",
+      achievements: [
+        "Led the club's technical team as Technical Head",
+        "Worked alongside the co-head and technical club members",
+      ],
+      technologies: ["Technical Leadership", "Team Collaboration", "Student Community"],
+      photo: {
+        src: "assets/bytearq-technical-head.png",
+        alt: "Sudip Kurundwade, Technical Head of byteARQ Technical Club",
+      },
+    },
+  ],
   education: [
     {
       degree: "B.Tech in Computer Science",
@@ -360,6 +377,23 @@ window.portfolioData = {
       ],
       tone: "yellow",
       icon: "trophy",
+    },
+    {
+      title: "2nd Place · NeuronRush",
+      date: "23 September 2024 · Phoenix 2K24, DKTE",
+      description: "Secured 2nd place in NeuronRush during Phoenix 2K24 at DKTE Society's Textile & Engineering Institute, Ichalkaranji.",
+      details: [
+        "Recognized at the Phoenix 2K24 technical event",
+        "Organized by CSA and IEEE Computer Society",
+      ],
+      photos: [
+        {
+          src: "assets/achievements/neuronrush-second-place.jpeg",
+          alt: "Certificate for 2nd place in NeuronRush at Phoenix 2K24",
+        },
+      ],
+      tone: "green",
+      icon: "award",
     }
   ],
 };

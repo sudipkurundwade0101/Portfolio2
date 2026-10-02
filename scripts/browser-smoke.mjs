@@ -319,6 +319,27 @@ try {
       fail(`${viewport.name}: hero content did not render.`);
     }
 
+    const photoViewerResult = await client.command("Runtime.evaluate", {
+      returnByValue: true,
+      expression: `(() => {
+        const trigger = document.querySelector("[data-achievement-photo]");
+        const dialog = document.querySelector("[data-photo-dialog]");
+        const image = document.querySelector("[data-photo-dialog-image]");
+        if (!trigger || !dialog || !image) {
+          return { available: false };
+        }
+        trigger.click();
+        const state = { available: true, open: dialog.open, source: image.getAttribute("src") };
+        dialog.close();
+        return state;
+      })()`,
+    });
+
+    const photoViewer = photoViewerResult.result.value;
+    if (!photoViewer.available || !photoViewer.open || !photoViewer.source) {
+      fail(`${viewport.name}: achievement photo viewer did not open correctly.`);
+    }
+
     const screenshot = await client.command("Page.captureScreenshot", {
       format: "png",
       captureBeyondViewport: false,

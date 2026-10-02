@@ -174,6 +174,13 @@
       <article class="timeline-item reveal" style="--item-index: ${index}">
         <div class="timeline-marker" aria-hidden="true">${icon(index % 2 === 0 ? "briefcase" : "sparkles")}</div>
         <div class="timeline-card sticker-card">
+          ${
+            item.photo
+              ? `<figure class="timeline-card__portrait">
+                  <img src="${escapeHTML(item.photo.src)}" alt="${escapeHTML(item.photo.alt)}" loading="lazy" />
+                </figure>`
+              : ""
+          }
           <p class="card-kicker">${escapeHTML(item.date)}</p>
           <h3>${escapeHTML(item.role)}</h3>
           <p class="timeline-card__company">${escapeHTML(item.company)}</p>
