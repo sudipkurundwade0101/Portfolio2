@@ -6,5 +6,8 @@
   "scripts": {
     "check": "node scripts/validate-site.mjs",
     "browser:check": "node scripts/browser-smoke.mjs"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
   }
 }
